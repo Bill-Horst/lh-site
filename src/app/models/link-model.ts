@@ -1,7 +1,7 @@
 export class LinkModel {
     public title: string;
     public subtitle: string;
-    public url: string;
+    public url?: string;
     public imageLink: string;
     public description: string;
 
