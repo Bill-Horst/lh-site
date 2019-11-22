@@ -1,1 +1,26 @@
-<p>games-page works!</p>
+<mat-tab-group>
+        <mat-tab *ngFor="let subject of subjects">
+            <ng-template mat-tab-label>
+                <mat-icon class="tab-icon">{{subject.matIcon}}</mat-icon>
+                {{subject.title}}
+            </ng-template>
+            <div class="link-container">
+                <div class="links" *ngFor="let link of subject.linkTypes">
+                    <mat-card class="link-card">
+                        <mat-card-header>
+                            <mat-card-title>{{ link.title }}</mat-card-title>
+                            <mat-card-subtitle>{{ link.subtitle }}</mat-card-subtitle>
+                        </mat-card-header>
+                        <hr />
+                        <a href="{{ link.url }}" target="_blank"><img mat-card-image src="{{link.imageLink}}"></a>
+                        <hr />
+                        <mat-card-content>
+                            <p>
+                                {{ link.description }}
+                            </p>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
