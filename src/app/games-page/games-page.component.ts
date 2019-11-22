@@ -10,33 +10,25 @@ import { LinkModel } from '../models/link-model';
 export class GamesPageComponent implements OnInit {
 
   public subjects: Array<LinkTypeModel>;
-
-  public scienceLinks: Array<LinkModel>;
-  public mathLinks: Array<LinkModel>;
-  public socialStudiesLinks: Array<LinkModel>;
+  
+  public mathGames: Array<LinkModel>;
+  public japaneseGames: Array<LinkModel>;
 
   constructor() {
-    this.scienceLinks = this.getScienceLinks();
-    this.mathLinks = this.getMathLinks();
-    this.socialStudiesLinks = this.getSocialStudiesLinks();
+    this.mathGames = this.getMathGames();
+    this.japaneseGames = this.getJapaneseGames();
 
     this.subjects = [
       {
-        title: 'Science',
-        matIcon: 'image_search',
-        linkTypes: this.scienceLinks
-      },
-
-      {
         title: 'Math',
         matIcon: 'plus_one',
-        linkTypes: this.mathLinks
+        linkTypes: this.mathGames
       },
 
       {
-        title: 'Social Studies',
-        matIcon: 'person',
-        linkTypes: this.socialStudiesLinks
+        title: 'Japanese',
+        matIcon: 'translate',
+        linkTypes: this.japaneseGames
       },
     ]
   }
@@ -44,38 +36,28 @@ export class GamesPageComponent implements OnInit {
   ngOnInit() {
   }
 
-  private getScienceLinks(): Array<LinkModel> {
+  private getMathGames(): Array<LinkModel> {
     return [
       {
-        title: 'Scholastic For Kids',
-        subtitle: 'Learn about light',
-        description: 'Learn all about light',
-        url: 'https://www.scholastic.com/teachers/activities/teaching-content/energy-light-and-sound-10-studyjams-interactive-science-activities/',
-        imageLink: 'https://www.metuchenlibrary.org/wp-content/uploads/2014/09/scholastic-kids.png'
-      },
-      {
-        title: 'Human Body Facts',
-        subtitle: 'Learn about human body',
-        description: 'Learn all about human body, yo',
-        url: 'https://www.scienceforkidsclub.com/human-body.html',
-        imageLink: 'https://i.pinimg.com/originals/b5/1c/de/b51cde37251db20fe4671852a5c4966a.jpg'
-      },
-      {
-        title: 'Human Body Video',
-        subtitle: 'Watch video about human body',
-        description: 'Teaches you about human body',
-        url: 'https://www.youtube.com/watch?v=rg34VwymLXc',
-        imageLink: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT_mBtbssWHgsHSDcIR3QClZJW-zrWeQQeujTqpY4hNSlgYsGFs'
+        title: 'Math Game Time',
+        subtitle: 'A Math Game',
+        description: 'A game to help you practice math',
+        url: 'http://www.mathgametime.com/math-games',
+        imageLink: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTmuvAr5OJjfFzbhqJOUMsgwiFvF_ErDaFDtAxR-TA34Y6tH4lI'
       }
-    ]
+    ];
   }
 
-  private getMathLinks(): Array<LinkModel> {
-    return [];
-  }
-
-  private getSocialStudiesLinks(): Array<LinkModel> {
-    return [];
+  private getJapaneseGames(): Array<LinkModel> {
+    return [
+      {
+        title: 'Japanese Games',
+        subtitle: 'A Bunch of Japanese Games',
+        description: 'Practice Japanese with these games',
+        url: 'http://www.digitaldialects.com/Japanese.htm',
+        imageLink: 'https://www.fluentu.com/blog/japanese/wp-content/uploads/sites/6/2017/07/japanese-learning-games-1-e1500305003597.jpg'
+      }
+    ];
   }
 
 }

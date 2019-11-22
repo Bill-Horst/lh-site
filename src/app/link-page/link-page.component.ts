@@ -71,11 +71,34 @@ export class LinkPageComponent implements OnInit {
   }
 
   private getMathLinks(): Array<LinkModel> {
-    return [];
+    return [
+      {
+        title: 'Division Video',
+        subtitle: 'Learn about division',
+        description: 'Learn all about division, yo',
+        url: 'https://www.youtube.com/watch?v=BFhUXNoRpQE',
+        imageLink: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRd62WVvPvxCKZpK3brMf2ik8cnDXH8PCTgMJHLw68_mwa_-YPX'
+      },
+      {
+        title: 'Multiplication Facts',
+        subtitle: 'Lots of multiplication stuff',
+        description: 'Teaches you about multiplication',
+        url: 'https://www.education.com/resources/multiplication-facts/',
+        imageLink: 'http://mathfoundations.weebly.com/uploads/9/0/9/6/9096678/4822152_orig.png'
+      }
+    ];
   }
 
   private getSocialStudiesLinks(): Array<LinkModel> {
-    return [];
+    return [
+      {
+        title: 'Ancient Rome Facts',
+        subtitle: 'Stuff about Ancient Rome',
+        description: 'Learn lots of stuff about Ancient Rome',
+        url: 'https://www.ducksters.com/history/ancient_rome.php',
+        imageLink: 'https://www.oddizzi.com/wp-content/uploads/2011/01/img-italy-colloseum.jpg'
+      }
+    ];
   }
 
 }

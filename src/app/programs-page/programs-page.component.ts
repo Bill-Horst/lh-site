@@ -11,22 +11,14 @@ export class ProgramsPageComponent implements OnInit {
 
   public subjects: Array<LinkTypeModel>;
 
-  public scienceLinks: Array<LinkModel>;
   public mathLinks: Array<LinkModel>;
-  public socialStudiesLinks: Array<LinkModel>;
+  public spellingLinks: Array<LinkModel>;
 
   constructor() {
-    this.scienceLinks = this.getScienceLinks();
     this.mathLinks = this.getMathLinks();
-    this.socialStudiesLinks = this.getSocialStudiesLinks();
+    this.spellingLinks = this.getSpellingLinks();
 
     this.subjects = [
-      {
-        title: 'Science',
-        matIcon: 'image_search',
-        linkTypes: this.scienceLinks
-      },
-
       {
         title: 'Math',
         matIcon: 'plus_one',
@@ -34,9 +26,9 @@ export class ProgramsPageComponent implements OnInit {
       },
 
       {
-        title: 'Social Studies',
-        matIcon: 'person',
-        linkTypes: this.socialStudiesLinks
+        title: 'Spelling',
+        matIcon: 'spellcheck',
+        linkTypes: this.spellingLinks
       },
     ]
   }
@@ -44,38 +36,28 @@ export class ProgramsPageComponent implements OnInit {
   ngOnInit() {
   }
 
-  private getScienceLinks(): Array<LinkModel> {
+  private getMathLinks(): Array<LinkModel> {
     return [
       {
-        title: 'Scholastic For Kids',
-        subtitle: 'Learn about light',
-        description: 'Learn all about light',
-        url: 'https://www.scholastic.com/teachers/activities/teaching-content/energy-light-and-sound-10-studyjams-interactive-science-activities/',
-        imageLink: 'https://www.metuchenlibrary.org/wp-content/uploads/2014/09/scholastic-kids.png'
-      },
-      {
-        title: 'Human Body Facts',
-        subtitle: 'Learn about human body',
-        description: 'Learn all about human body, yo',
-        url: 'https://www.scienceforkidsclub.com/human-body.html',
-        imageLink: 'https://i.pinimg.com/originals/b5/1c/de/b51cde37251db20fe4671852a5c4966a.jpg'
-      },
-      {
-        title: 'Human Body Video',
-        subtitle: 'Watch video about human body',
-        description: 'Teaches you about human body',
-        url: 'https://www.youtube.com/watch?v=rg34VwymLXc',
-        imageLink: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT_mBtbssWHgsHSDcIR3QClZJW-zrWeQQeujTqpY4hNSlgYsGFs'
+        title: 'Prodigy',
+        subtitle: 'Math Game',
+        description: 'Learn about math through fightin\' flame neeks',
+        url: 'https://play.prodigygame.com/',
+        imageLink: 'https://askatechteacher.com/wp-content/uploads/2015/02/prodigy-game-2.jpg'
       }
-    ]
+    ];
   }
 
-  private getMathLinks(): Array<LinkModel> {
-    return [];
-  }
-
-  private getSocialStudiesLinks(): Array<LinkModel> {
-    return [];
+  private getSpellingLinks(): Array<LinkModel> {
+    return [
+      {
+        title: 'Spelling City',
+        subtitle: 'Practice Spelling',
+        description: 'A program to help you practice your spelling words for school',
+        url: 'https://www.spellingcity.com/',
+        imageLink: 'https://is3-ssl.mzstatic.com/image/thumb/Purple117/v4/9f/4f/75/9f4f75a1-8054-c1cd-d215-16a5def29a1a/pr_source.jpg/643x0w.jpg'
+      }
+    ];
   }
 
 }
