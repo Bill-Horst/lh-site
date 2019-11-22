@@ -11,6 +11,7 @@ import { MatMenuModule, MatToolbarModule, MatSidenavModule, MatListModule, MatBu
 import { LinkPageComponent } from './link-page/link-page.component';
 import { GamesPageComponent } from './games-page/games-page.component';
 import { ProgramsPageComponent } from './programs-page/programs-page.component';
+import { TestPageComponent } from './test-page/test-page.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ProgramsPageComponent } from './programs-page/programs-page.component';
     AboutPageComponent,
     LinkPageComponent,
     GamesPageComponent,
-    ProgramsPageComponent
+    ProgramsPageComponent,
+    TestPageComponent
   ],
   imports: [
     BrowserModule,
