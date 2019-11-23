@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LinkModel } from '../models/link-model';
 import { LinkTypeModel } from '../models/link-type-model';
+import { MatDialog } from '@angular/material';
+import { IndividualTestComponent } from '../individual-test/individual-test.component';
 
 @Component({
   selector: 'app-test-page',
@@ -16,7 +18,9 @@ export class TestPageComponent implements OnInit {
   public mathTests: Array<LinkModel>;
   public japaneseTests: Array<LinkModel>;
 
-  constructor() {
+  constructor(
+    private dialog: MatDialog
+  ) {
     this.mathTests = this.getMathTests();
     this.japaneseTests = this.getJapaneseTests();
 
@@ -39,7 +43,13 @@ export class TestPageComponent implements OnInit {
   }
 
   public runTest(test) {
-    console.log(`running test: ${test}`);
+    this.dialog.open(IndividualTestComponent, {
+      width: '50%',
+      data: {
+        title: test,
+        questionCount: 3 // hard coded to 10 for now
+      }
+    })
   }
 
   private getMathTests(): Array<LinkModel> {

@@ -1,0 +1,32 @@
+<mat-dialog-content>
+    <div class="reaction-message-container">
+        <div #reactionMessage class="reaction-message"></div>
+    </div>
+    <div class="perfect-message-container">
+        <div #perfectMessage class="perfect-message"></div>
+    </div>
+
+    <h1 class="test-title">{{ title }}</h1>
+
+    <div *ngIf="testState === 'notStarted'">
+        <p>Ready? Click 'Start Test' to start the test:</p>
+        <button mat-raised-button (click)="testState = 'inProgress'">Start Test</button>
+    </div>
+
+    <div *ngIf="testState === 'inProgress'">
+        <div class="test-question-container"><span class="test-question">{{ currentQuestion.question }}</span></div>
+        <button class="answer-buttons" mat-raised-button *ngFor="let ans of currentQuestion.answers"
+            (click)="answeredQuestion(ans)">{{ ans.answer }}</button>
+    </div>
+
+    <div *ngIf="testState === 'finished'">
+        <p>Results:</p>
+        <!-- list of results here -->
+        <div *ngFor="let res of testSet">
+            <span> <span>{{ res.question }}</span> Correct answer: {{ res.correctAnswer }}</span>
+            <p [ngClass]="{'correct-answer': res.answeredCorrectly, 'wrong-answer': !res.answeredCorrectly}">You
+                answered: {{ res.chosenAnswer.answer }} </p>
+        </div>
+    </div>
+
+</mat-dialog-content>

@@ -7,11 +7,12 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatMenuModule, MatToolbarModule, MatSidenavModule, MatListModule, MatButtonModule, MatIconModule, MatCardModule, MatTabsModule } from '@angular/material';
+import { MatMenuModule, MatToolbarModule, MatSidenavModule, MatListModule, MatButtonModule, MatIconModule, MatCardModule, MatTabsModule, MatDialogModule } from '@angular/material';
 import { LinkPageComponent } from './link-page/link-page.component';
 import { GamesPageComponent } from './games-page/games-page.component';
 import { ProgramsPageComponent } from './programs-page/programs-page.component';
 import { TestPageComponent } from './test-page/test-page.component';
+import { IndividualTestComponent } from './individual-test/individual-test.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TestPageComponent } from './test-page/test-page.component';
     LinkPageComponent,
     GamesPageComponent,
     ProgramsPageComponent,
-    TestPageComponent
+    TestPageComponent,
+    IndividualTestComponent
   ],
   imports: [
     BrowserModule,
@@ -34,9 +36,11 @@ import { TestPageComponent } from './test-page/test-page.component';
     MatButtonModule,
     MatIconModule,
     MatCardModule,
-    MatTabsModule
+    MatTabsModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [IndividualTestComponent]
 })
 export class AppModule { }
