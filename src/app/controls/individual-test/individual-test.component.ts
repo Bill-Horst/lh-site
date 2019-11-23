@@ -76,17 +76,33 @@ export class IndividualTestComponent implements OnInit {
   }
 
   private generateQuestions(): Array<any> {
+
     let set: Array<any> = [];
-    if (this.questionData.subject === 'multiplication') {
-      for (let i = 0; i < this.questionData.questionCount; i++) {
-        set.push(this.testMakerService.generateMultiplicationQuestion(this.questionData.min, this.questionData.max));
-      }
-    }
+
     if (this.questionData.subject === 'addition') {
       for (let i = 0; i < this.questionData.questionCount; i++) {
         set.push(this.testMakerService.generateAdditionQuestion(this.questionData.min, this.questionData.max));
       }
     }
+
+    if (this.questionData.subject === 'subtraction') {
+      for (let i = 0; i < this.questionData.questionCount; i++) {
+        set.push(this.testMakerService.generateSubtractionQuestion(this.questionData.min, this.questionData.max));
+      }
+    }
+
+    if (this.questionData.subject === 'division') {
+      for (let i = 0; i < this.questionData.questionCount; i++) {
+        set.push(this.testMakerService.generateDivisionQuestion(this.questionData.max));
+      }
+    }
+
+    if (this.questionData.subject === 'multiplication') {
+      for (let i = 0; i < this.questionData.questionCount; i++) {
+        set.push(this.testMakerService.generateMultiplicationQuestion(this.questionData.min, this.questionData.max));
+      }
+    }
+
     return set;
   }
 

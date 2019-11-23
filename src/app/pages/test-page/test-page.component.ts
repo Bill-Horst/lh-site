@@ -61,8 +61,8 @@ export class TestPageComponent implements OnInit {
     return [
       {
         title: 'Multiplication Test',
-        subtitle: 'A Math Test on Multiplication',
-        description: 'A test to test your multiplication skills',
+        subtitle: '10 questions on numbers 1 - 10',
+        description: 'A test to test your multiplying skills',
         imageLink: 'https://ecdn.teacherspayteachers.com/thumbitem/Multiplication-Timed-Tests-with-Facts-1-10-3198452-1561682486/original-3198452-2.jpg',
         subject: 'multiplication',
         questionCount: 10,
@@ -70,11 +70,51 @@ export class TestPageComponent implements OnInit {
         max: 10
       },
       {
+        title: 'Multiplication Test',
+        subtitle: '10 questions on numbers 1 - 12',
+        description: 'A test to test your multiplying skills',
+        imageLink: 'https://ecdn.teacherspayteachers.com/thumbitem/Multiplication-Timed-Tests-with-Facts-1-10-3198452-1561682486/original-3198452-2.jpg',
+        subject: 'multiplication',
+        questionCount: 10,
+        min: 1,
+        max: 12
+      },
+      {
+        title: 'Division Test',
+        subtitle: '10 questions on numbers 1 - 9',
+        description: 'A test to test your dividing skills',
+        imageLink: 'https://ecdn.teacherspayteachers.com/thumbitem/Multiplication-Timed-Tests-with-Facts-1-10-3198452-1561682486/original-3198452-2.jpg',
+        subject: 'division',
+        questionCount: 10,
+        min: 1,
+        max: 9
+      },
+      {
         title: 'Addition Test',
-        subtitle: 'A Math Test on Addition',
+        subtitle: '10 questions on numbers 1 - 10',
         description: 'A test to test your adding skills',
         imageLink: 'https://ecdn.teacherspayteachers.com/thumbitem/Multiplication-Timed-Tests-with-Facts-1-10-3198452-1561682486/original-3198452-2.jpg',
         subject: 'addition',
+        questionCount: 10,
+        min: 1,
+        max: 10
+      },
+      {
+        title: 'Addition Test',
+        subtitle: '25 questions on numbers 1 - 10',
+        description: 'A test to test your adding skills',
+        imageLink: 'https://ecdn.teacherspayteachers.com/thumbitem/Multiplication-Timed-Tests-with-Facts-1-10-3198452-1561682486/original-3198452-2.jpg',
+        subject: 'addition',
+        questionCount: 25,
+        min: 1,
+        max: 10
+      },
+      {
+        title: 'Subtraction Test',
+        subtitle: '10 questions on numbers 1 - 10',
+        description: 'A test to test your subtracting skills',
+        imageLink: 'https://ecdn.teacherspayteachers.com/thumbitem/Multiplication-Timed-Tests-with-Facts-1-10-3198452-1561682486/original-3198452-2.jpg',
+        subject: 'subtraction',
         questionCount: 10,
         min: 1,
         max: 10
