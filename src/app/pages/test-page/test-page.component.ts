@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LinkModel } from '../../models/link-model';
 import { LinkTypeModel } from '../../models/link-type-model';
+import { TestLinkModel } from '../../models/test-link-model';
+import { TestParameterModel } from '../../models/test-parameter-model';
 import { MatDialog } from '@angular/material';
 import { IndividualTestComponent } from '../../controls/individual-test/individual-test.component';
 
@@ -45,31 +47,50 @@ export class TestPageComponent implements OnInit {
   public runTest(test) {
     this.dialog.open(IndividualTestComponent, {
       width: '50%',
-      data: {
-        title: test,
-        questionCount: 3 // hard coded to 10 for now
-      }
+      data: new TestParameterModel({
+        title: test.title,
+        questionCount: test.questionCount,
+        subject: test.subject,
+        min: test.min,
+        max: test.max
+      })
     })
   }
 
-  private getMathTests(): Array<LinkModel> {
+  private getMathTests(): Array<TestLinkModel> {
     return [
       {
         title: 'Multiplication Test',
         subtitle: 'A Math Test on Multiplication',
         description: 'A test to test your multiplication skills',
-        imageLink: 'https://ecdn.teacherspayteachers.com/thumbitem/Multiplication-Timed-Tests-with-Facts-1-10-3198452-1561682486/original-3198452-2.jpg'
+        imageLink: 'https://ecdn.teacherspayteachers.com/thumbitem/Multiplication-Timed-Tests-with-Facts-1-10-3198452-1561682486/original-3198452-2.jpg',
+        subject: 'multiplication',
+        questionCount: 10,
+        min: 1,
+        max: 10
+      },
+      {
+        title: 'Addition Test',
+        subtitle: 'A Math Test on Addition',
+        description: 'A test to test your adding skills',
+        imageLink: 'https://ecdn.teacherspayteachers.com/thumbitem/Multiplication-Timed-Tests-with-Facts-1-10-3198452-1561682486/original-3198452-2.jpg',
+        subject: 'addition',
+        questionCount: 10,
+        min: 1,
+        max: 10
       }
     ];
   }
 
-  private getJapaneseTests(): Array<LinkModel> {
+  private getJapaneseTests(): Array<TestLinkModel> {
     return [
       {
         title: 'Ichinenseino Kanji Test',
         subtitle: 'A Kanji Test for First Graders',
-        description: 'See you well you remember first grader kanji',
-        imageLink: 'https://i.ytimg.com/vi/uAdC4B4CHxA/hqdefault.jpg'
+        description: 'See how well you remember first grader kanji',
+        imageLink: 'https://i.ytimg.com/vi/uAdC4B4CHxA/hqdefault.jpg',
+        subject: 'japanese',
+        questionCount: 10
       }
     ];
   }

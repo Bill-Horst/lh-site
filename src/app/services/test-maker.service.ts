@@ -7,6 +7,47 @@ export class TestMakerService {
 
   constructor() { }
 
+  public generateAdditionQuestion(min: number = 0, max: number = 10) {
+
+    let currentQuestion;
+    let answers = [];
+
+    // generate two numbers
+    let number1 = Math.floor(Math.random() * (max - min) + min);
+    let number2 = Math.floor(Math.random() * (max - min) + min);
+
+    // generate and assign answer
+    let correctAnswer = number1 + number2;
+
+    // assign properties to generated questions
+    currentQuestion = `${number1} + ${number2} = ?`;
+
+    // push answer to array
+    answers.push({ correct: true, answer: correctAnswer });
+
+    // assign first trick question and push to array
+    let trick1 = -1;
+    do {
+      trick1 = Math.floor(Math.random() * max) + number1;
+    } while (trick1 === correctAnswer);
+    answers.push({ correct: false, answer: trick1 });
+
+    // assign second trick question and push to array
+    let trick2 = -1;
+    do {
+      trick2 = Math.floor(Math.random() * max) + number2;
+    } while (trick2 === trick1 || trick2 === correctAnswer);
+    answers.push({ correct: false, answer: trick2 });
+
+    // shuffle answers
+    answers = this.shuffle(answers);
+
+    return {
+      question: currentQuestion,
+      answers
+    }
+  }
+
   public generateMultiplicationQuestion(min: number = 1, max: number = 10) {
     let currentQuestion;
     let answers = [];

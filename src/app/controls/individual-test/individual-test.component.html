@@ -6,9 +6,10 @@
         <div #perfectMessage class="perfect-message"></div>
     </div>
 
-    <h1 class="test-title">{{ title }}</h1>
-
     <div *ngIf="testState === 'notStarted'">
+
+        <h1 class="test-title">{{ questionData.title }}</h1>
+
         <p>Ready? Click 'Start Test' to start the test:</p>
         <button mat-raised-button (click)="testState = 'inProgress'">Start Test</button>
     </div>

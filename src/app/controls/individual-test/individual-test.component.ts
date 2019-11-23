@@ -2,6 +2,7 @@ import { Component, OnInit, Inject, ViewChild, ElementRef } from '@angular/core'
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { TestMakerService } from '../../services/test-maker.service';
 import { StorageService } from 'src/app/services/storage.service';
+import { TestParameterModel } from 'src/app/models/test-parameter-model';
 
 @Component({
   selector: 'app-individual-test',
@@ -22,9 +23,7 @@ export class IndividualTestComponent implements OnInit {
   public reactionMessage: string;
   public testSet: Array<any>;
   public testState: 'notStarted' | 'inProgress' | 'finished';
-  public title: string;
-
-  private questionCount: number;
+  public questionData: TestParameterModel;
 
 
   constructor(
@@ -33,12 +32,9 @@ export class IndividualTestComponent implements OnInit {
     private testMakerService: TestMakerService,
     private storageService: StorageService
   ) {
-    this.title = this.passedData.title;
-    this.questionCount = this.passedData.questionCount;
-
+    this.questionData = this.passedData;
     this.testState = 'notStarted';
-
-    this.testSet = this.generateQuestions(this.questionCount);
+    this.testSet = this.generateQuestions();
     this.currentQuestion = this.testSet[this.currentQuestionIndex];
   }
 
@@ -49,15 +45,15 @@ export class IndividualTestComponent implements OnInit {
 
     let correctAnswer = this.currentQuestion.answers.find(ans => ans.correct).answer;
 
-    if (this.currentQuestionIndex + 1 < this.questionCount) {
+    if (this.currentQuestionIndex + 1 < this.questionData.questionCount) {
       this.currentQuestionIndex++;
     } else {
       this.testState = 'finished';
     }
 
     this.currentQuestion.chosenAnswer = answer;
-    this.currentQuestion.correctAnswer = this.currentQuestion.answers.find(ans => ans.correct).answer;
-    this.currentQuestion.answeredCorrectly = answer.correct;
+    this.currentQuestion.correctAnswer = correctAnswer;
+    this.currentQuestion.answeredCorrectly = this.currentQuestion.chosenAnswer.correct;
     this.reactionMessage = answer.correct ? 'Nice!' : 'Wrong';
 
     this.currentQuestion = this.testSet[this.currentQuestionIndex];
@@ -79,10 +75,17 @@ export class IndividualTestComponent implements OnInit {
 
   }
 
-  private generateQuestions(qCount: number): Array<any> {
+  private generateQuestions(): Array<any> {
     let set: Array<any> = [];
-    for (let i = 0; i < qCount; i++) {
-      set.push(this.testMakerService.generateMultiplicationQuestion());
+    if (this.questionData.subject === 'multiplication') {
+      for (let i = 0; i < this.questionData.questionCount; i++) {
+        set.push(this.testMakerService.generateMultiplicationQuestion(this.questionData.min, this.questionData.max));
+      }
+    }
+    if (this.questionData.subject === 'addition') {
+      for (let i = 0; i < this.questionData.questionCount; i++) {
+        set.push(this.testMakerService.generateAdditionQuestion(this.questionData.min, this.questionData.max));
+      }
     }
     return set;
   }
