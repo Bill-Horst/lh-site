@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject, ViewChild, ElementRef } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { TestMakerService } from '../../services/test-maker.service';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-individual-test',
@@ -29,7 +30,8 @@ export class IndividualTestComponent implements OnInit {
   constructor(
     private dialogRef: MatDialogRef<IndividualTestComponent>,
     @Inject(MAT_DIALOG_DATA) private passedData: any,
-    private testMakerService: TestMakerService
+    private testMakerService: TestMakerService,
+    private storageService: StorageService
   ) {
     this.title = this.passedData.title;
     this.questionCount = this.passedData.questionCount;
@@ -71,13 +73,7 @@ export class IndividualTestComponent implements OnInit {
       let wrongAnswers = this.testSet.filter(res => res.answeredCorrectly === false);
       if (wrongAnswers.length === 0) {
         this.perfectMessage = "Nice! Perfect!";
-        if (localStorage.getItem('perfectCount') !== null) {
-          let pCount = parseInt(localStorage.getItem('perfectCount'));
-          pCount++;
-          localStorage.setItem('perfectCount', pCount.toString());
-        } else {
-          (localStorage.setItem('perfectCount', '1'));
-        }
+        this.storageService.incrementPerfectTestCount();
       }
     }
 

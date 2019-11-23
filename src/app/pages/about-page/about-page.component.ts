@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-about-page',
@@ -7,15 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutPageComponent implements OnInit {
 
-  public perfectCount: string;
-  public yetToStart: string;
+  public perfectCount: number;
 
-  constructor() { 
-    if (localStorage.getItem('perfectCount') !== null) {
-      this.perfectCount = localStorage.getItem('perfectCount');
-    } else {
-      this.yetToStart = 'I have yet to get a perfect test score.';
-    }
+  constructor(
+    private storageService: StorageService
+  ) { 
+    this.perfectCount = this.storageService.getPerfectTestCount();
   }
 
   ngOnInit() {
