@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { LinkModel } from '../models/link-model';
-import { LinkTypeModel } from '../models/link-type-model';
+import { LinkModel } from '../../models/link-model';
+import { LinkTypeModel } from '../../models/link-type-model';
 
 @Component({
   selector: 'app-link-page',

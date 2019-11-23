@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject, ViewChild, ElementRef } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { TestMakerService } from '../test-maker.service';
+import { TestMakerService } from '../../services/test-maker.service';
 
 @Component({
   selector: 'app-individual-test',

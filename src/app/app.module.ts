@@ -3,16 +3,16 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MainPageComponent } from './main-page/main-page.component';
-import { AboutPageComponent } from './about-page/about-page.component';
+import { MainPageComponent } from './pages/main-page/main-page.component';
+import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatMenuModule, MatToolbarModule, MatSidenavModule, MatListModule, MatButtonModule, MatIconModule, MatCardModule, MatTabsModule, MatDialogModule } from '@angular/material';
-import { LinkPageComponent } from './link-page/link-page.component';
-import { GamesPageComponent } from './games-page/games-page.component';
-import { ProgramsPageComponent } from './programs-page/programs-page.component';
-import { TestPageComponent } from './test-page/test-page.component';
-import { IndividualTestComponent } from './individual-test/individual-test.component';
+import { LinkPageComponent } from './pages/link-page/link-page.component';
+import { GamesPageComponent } from './pages/games-page/games-page.component';
+import { ProgramsPageComponent } from './pages/programs-page/programs-page.component';
+import { TestPageComponent } from './pages/test-page/test-page.component';
+import { IndividualTestComponent } from './controls/individual-test/individual-test.component';
 
 @NgModule({
   declarations: [

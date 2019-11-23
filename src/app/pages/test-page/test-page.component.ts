@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { LinkModel } from '../models/link-model';
-import { LinkTypeModel } from '../models/link-type-model';
+import { LinkModel } from '../../models/link-model';
+import { LinkTypeModel } from '../../models/link-type-model';
 import { MatDialog } from '@angular/material';
-import { IndividualTestComponent } from '../individual-test/individual-test.component';
+import { IndividualTestComponent } from '../../controls/individual-test/individual-test.component';
 
 @Component({
   selector: 'app-test-page',

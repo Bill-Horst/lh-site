@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { LinkTypeModel } from '../models/link-type-model';
-import { LinkModel } from '../models/link-model';
+import { LinkTypeModel } from '../../models/link-type-model';
+import { LinkModel } from '../../models/link-model';
 
 @Component({
   selector: 'app-games-page',
