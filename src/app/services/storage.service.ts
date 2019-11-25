@@ -13,8 +13,8 @@ export class StorageService {
   private perfectDivisionTestCount: number;
 
   constructor() {
-    this.updatePerfectTestCountProperties();
     this.setUpLocalStorage();
+    this.updatePerfectTestCountProperties();
   }
 
   public getPerfectTestCount() {
@@ -33,7 +33,7 @@ export class StorageService {
     this.incrementPerfectSubjectTestCount(subject);
   }
 
-  public clearAllTests() {
+  public clearAllTests() { // method will be deleted when app is up and running (no need to ever delete all except for when dev/testing)
     localStorage.removeItem(Constants.PERFECT_COUNT);
     localStorage.removeItem(Constants.PERFECT_ADDITION_TEST_COUNT);
     localStorage.removeItem(Constants.PERFECT_SUBTRACTION_TEST_COUNT);
