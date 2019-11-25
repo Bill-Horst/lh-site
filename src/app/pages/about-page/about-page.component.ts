@@ -9,15 +9,28 @@ import { StorageService } from 'src/app/services/storage.service';
 export class AboutPageComponent implements OnInit {
 
   public perfectCount: number;
+  public perfectAdditionCount: number;
+  public perfectSubtractionCount: number;
+  public perfectMultiplicationCount: number;
+  public perfectDivisionCount: number;
 
   constructor(
     private storageService: StorageService
   ) { 
-    this.perfectCount = this.storageService.getPerfectTestCount();
+    let perfectTests = this.storageService.getPerfectTestCount();
+    this.perfectCount = perfectTests.total;
+    this.perfectAdditionCount = perfectTests.addition;
+    this.perfectSubtractionCount = perfectTests.subtraction;
+    this.perfectMultiplicationCount = perfectTests.multiplication;
+    this.perfectDivisionCount = perfectTests.division;
   }
 
   ngOnInit() {
     
+  }
+
+  public clearAllTests() {
+    this.storageService.clearAllTests();
   }
 
 }

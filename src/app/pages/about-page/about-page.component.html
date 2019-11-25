@@ -1,3 +1,72 @@
 <h1>My name is Luca</h1>
 <p>I like cats. Meow.</p>
 <p>I have {{ perfectCount }} perfect test scores!</p>
+<button (click)="clearAllTests()">Clear all tests</button>
+
+<mat-card>
+
+    <mat-card-header>
+        <mat-card-title>Test Results</mat-card-title>
+    </mat-card-header>
+
+    <mat-accordion>
+
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Math
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="progress-indicator-section">
+                <div class="progress-indicator-div">
+                    <app-progress-indicator [progress-title]="'Addition'"
+                        [progress-indicator-value]="perfectAdditionCount * 3">
+                    </app-progress-indicator>
+                </div>
+                <div class="progress-indicator-div">
+                    <app-progress-indicator [progress-title]="'Subtraction'"
+                        [progress-indicator-value]="perfectSubtractionCount * 3"></app-progress-indicator>
+                </div>
+                <div class="progress-indicator-div">
+                    <app-progress-indicator [progress-title]="'Multiplication'"
+                        [progress-indicator-value]="perfectMultiplicationCount * 3"></app-progress-indicator>
+                </div>
+                <div class="progress-indicator-div">
+                    <app-progress-indicator [progress-title]="'Division'"
+                        [progress-indicator-value]="perfectDivisionCount * 3">
+                    </app-progress-indicator>
+                </div>
+            </div>
+        </mat-expansion-panel>
+
+
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Japanese
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="progress-indicator-section">
+                <div class="progress-indicator-div">
+                    <app-progress-indicator [progress-title]="'Addition'"
+                        [progress-indicator-value]="perfectAdditionCount * 3">
+                    </app-progress-indicator>
+                </div>
+                <div class="progress-indicator-div">
+                    <app-progress-indicator [progress-title]="'Subtraction'"
+                        [progress-indicator-value]="perfectSubtractionCount * 3"></app-progress-indicator>
+                </div>
+                <div class="progress-indicator-div">
+                    <app-progress-indicator [progress-title]="'Multiplication'"
+                        [progress-indicator-value]="perfectMultiplicationCount * 3"></app-progress-indicator>
+                </div>
+                <div class="progress-indicator-div">
+                    <app-progress-indicator [progress-title]="'Division'"
+                        [progress-indicator-value]="perfectDivisionCount * 3">
+                    </app-progress-indicator>
+                </div>
+            </div>
+        </mat-expansion-panel>
+
+    </mat-accordion>
+</mat-card>

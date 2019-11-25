@@ -69,7 +69,7 @@ export class IndividualTestComponent implements OnInit {
       let wrongAnswers = this.testSet.filter(res => res.answeredCorrectly === false);
       if (wrongAnswers.length === 0) {
         this.perfectMessage = "Nice! Perfect!";
-        this.storageService.incrementPerfectTestCount();
+        this.storageService.incrementPerfectTestCount(this.questionData.subject);
       }
     }
 
