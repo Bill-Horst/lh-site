@@ -24,4 +24,9 @@ export class Constants {
      * local storage key for perfect test count of division tests
      */
     public static readonly PERFECT_DIVISION_TEST_COUNT: string = 'perfectTestCount_division';
+
+    /**
+     * local storage key for object of user test levels
+     */
+    public static readonly USER_TEST_LEVELS: string = 'user_test_levels';
 }

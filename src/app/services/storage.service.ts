@@ -11,10 +11,12 @@ export class StorageService {
   private perfectSubtractionTestCount: number;
   private perfectMultiplicationTestCount: number;
   private perfectDivisionTestCount: number;
+  private userTestLevels: {any};
 
   constructor() {
     this.setUpLocalStorage();
     this.updatePerfectTestCountProperties();
+    this.updateUserTestLevels();
   }
 
   public getPerfectTestCount() {
@@ -25,6 +27,10 @@ export class StorageService {
       multiplication: this.perfectMultiplicationTestCount,
       division: this.perfectDivisionTestCount
     };
+  }
+
+  public getUserLevelSet() {
+    return this.userTestLevels;
   }
 
   public incrementPerfectTestCount(subject: string) {
@@ -39,6 +45,7 @@ export class StorageService {
     localStorage.removeItem(Constants.PERFECT_SUBTRACTION_TEST_COUNT);
     localStorage.removeItem(Constants.PERFECT_MULTIPLICATION_TEST_COUNT);
     localStorage.removeItem(Constants.PERFECT_DIVISION_TEST_COUNT);
+    localStorage.removeItem(Constants.USER_TEST_LEVELS);
   }
 
   private getPerfectTests(subject?: string) {
@@ -69,11 +76,16 @@ export class StorageService {
     this.perfectDivisionTestCount = this.getPerfectTests('division');
   }
 
+  private updateUserTestLevels() {
+    this.userTestLevels = JSON.parse(localStorage.getItem(Constants.USER_TEST_LEVELS));
+  }
+
   private setUpLocalStorage() {
     if (!localStorage.getItem(Constants.PERFECT_COUNT)) { localStorage.setItem(Constants.PERFECT_COUNT, "0") };
     if (!localStorage.getItem(Constants.PERFECT_ADDITION_TEST_COUNT)) { localStorage.setItem(Constants.PERFECT_ADDITION_TEST_COUNT, "0") };
     if (!localStorage.getItem(Constants.PERFECT_SUBTRACTION_TEST_COUNT)) { localStorage.setItem(Constants.PERFECT_SUBTRACTION_TEST_COUNT, "0") };
     if (!localStorage.getItem(Constants.PERFECT_MULTIPLICATION_TEST_COUNT)) { localStorage.setItem(Constants.PERFECT_MULTIPLICATION_TEST_COUNT, "0") };
     if (!localStorage.getItem(Constants.PERFECT_DIVISION_TEST_COUNT)) { localStorage.setItem(Constants.PERFECT_DIVISION_TEST_COUNT, "0") };
+    if (!localStorage.getItem(Constants.USER_TEST_LEVELS)) {localStorage.setItem(Constants.USER_TEST_LEVELS, '{"addition": 1, "subtraction": 1, "multiplication": 1, "division": 1}')};
   }
 }
