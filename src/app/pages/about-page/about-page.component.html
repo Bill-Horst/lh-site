@@ -1,12 +1,13 @@
 <h1>My name is Luca</h1>
 <p>I like cats. Meow.</p>
-<p>I have {{ perfectCount }} perfect test scores!</p>
+
 <button (click)="clearAllTests()">Clear all tests</button>
 
 <mat-card>
 
     <mat-card-header>
         <mat-card-title>Test Results</mat-card-title>
+        <mat-card-subtitle>({{ perfectCount }} perfect test scores!)</mat-card-subtitle>
     </mat-card-header>
 
     <mat-accordion>
@@ -20,20 +21,24 @@
             <div class="progress-indicator-section">
                 <div class="progress-indicator-div">
                     <app-progress-indicator [progress-title]="'Addition'"
-                        [progress-indicator-value]="perfectAdditionCount * 3">
+                        [progress-indicator-value]="perfectAdditionCount * 3"
+                        [progress-indicator-percentage]="perfectAdditionCount">
                     </app-progress-indicator>
                 </div>
                 <div class="progress-indicator-div">
                     <app-progress-indicator [progress-title]="'Subtraction'"
-                        [progress-indicator-value]="perfectSubtractionCount * 3"></app-progress-indicator>
+                        [progress-indicator-value]="perfectSubtractionCount * 3"
+                        [progress-indicator-percentage]="perfectSubtractionCount"></app-progress-indicator>
                 </div>
                 <div class="progress-indicator-div">
                     <app-progress-indicator [progress-title]="'Multiplication'"
-                        [progress-indicator-value]="perfectMultiplicationCount * 3"></app-progress-indicator>
+                        [progress-indicator-value]="perfectMultiplicationCount * 3"
+                        [progress-indicator-percentage]="perfectMultiplicationCount"></app-progress-indicator>
                 </div>
                 <div class="progress-indicator-div">
                     <app-progress-indicator [progress-title]="'Division'"
-                        [progress-indicator-value]="perfectDivisionCount * 3">
+                        [progress-indicator-value]="perfectDivisionCount * 3"
+                        [progress-indicator-percentage]="perfectDivisionCount">
                     </app-progress-indicator>
                 </div>
             </div>

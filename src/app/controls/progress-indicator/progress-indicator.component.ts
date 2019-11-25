@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ProgressIndicatorComponent implements OnInit {
 
   public progIndicValue: number;
+  public progIndicPercentage: number;
   public progTitle: string;
 
   @Input('progress-indicator-value')
@@ -15,6 +16,14 @@ export class ProgressIndicatorComponent implements OnInit {
     this.progIndicValue = 100;
     setTimeout(x => {
       this.progIndicValue = val;
+    }, 10)
+  }
+
+  @Input('progress-indicator-percentage')
+  set progressIndicatorPercentage(val) {
+    this.progIndicPercentage = 100;
+    setTimeout(x => {
+      this.progIndicPercentage = val;
     }, 10)
   }
 

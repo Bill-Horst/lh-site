@@ -6,12 +6,14 @@ import { LinkPageComponent } from './pages/link-page/link-page.component';
 import { GamesPageComponent } from './pages/games-page/games-page.component';
 import { ProgramsPageComponent } from './pages/programs-page/programs-page.component';
 import { TestPageComponent } from './pages/test-page/test-page.component';
+import { ProjectsPageComponent } from './pages/projects-page/projects-page.component';
 
 
 const routes: Routes = [
   { path: 'main', component: MainPageComponent },
   { path: 'about', component: AboutPageComponent },
   { path: 'links', component: LinkPageComponent },
+  { path: 'projects', component: ProjectsPageComponent },
   { path: 'tests', component: TestPageComponent },
   { path: 'games', component: GamesPageComponent },
   { path: 'programs', component: ProgramsPageComponent },
