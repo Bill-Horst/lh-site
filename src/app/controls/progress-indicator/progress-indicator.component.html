@@ -1,9 +1,11 @@
 <div class="progress-indicator-container">
 
     <p class="progress-indicator-title">{{ progTitle }}</p>
-    <p class="progress-indicator-subtitle">{{ progIndicValue }}</p>
 
-    <mat-progress-spinner class="progress-indicator-spinner" [color]="primary" [mode]="'determinate'"
-        [value]="progIndicValue"></mat-progress-spinner>
+    <div class="spinner-container">
+        <div class="spinner-background">{{ progIndicValue }}</div>
+        <mat-progress-spinner class="progress-indicator-spinner" [color]="primary" [mode]="'determinate'"
+            [value]="progIndicValue"></mat-progress-spinner>
+    </div>
 
 </div>
