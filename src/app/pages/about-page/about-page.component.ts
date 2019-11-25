@@ -29,8 +29,15 @@ export class AboutPageComponent implements OnInit {
     
   }
 
-  public clearAllTests() {
+  public clearAllTests() { // temp - to be deleted when app is live
     this.storageService.clearAllTests();
+  }
+
+  public seedTestData() { // temp - to be deleted when app is live
+    let subjects = ['addition', 'subtraction', 'multiplication', 'division'];
+    for (let i = 0; i < 15; i++) {
+      this.storageService.incrementPerfectTestCount(subjects[Math.floor(Math.random() * 4)]);
+    }
   }
 
 }
