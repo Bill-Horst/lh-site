@@ -14,6 +14,14 @@ export class AboutPageComponent implements OnInit {
   public perfectMultiplicationCount: number;
   public perfectDivisionCount: number;
 
+  public additionTestIndicatorPercentage: number;
+
+  public currentAdditionCountByLevel: number;
+
+  public currentAdditionLevel: number;
+
+  public userLevelSet: any;
+
   constructor(
     private storageService: StorageService
   ) { 
@@ -23,6 +31,10 @@ export class AboutPageComponent implements OnInit {
     this.perfectSubtractionCount = perfectTests.subtraction;
     this.perfectMultiplicationCount = perfectTests.multiplication;
     this.perfectDivisionCount = perfectTests.division;
+    this.userLevelSet = this.storageService.getUserLevelSet();
+    this.additionTestIndicatorPercentage = this.calculatePercentage('addition');
+    this.currentAdditionCountByLevel = this.userLevelSet.addition.currentScore - this.userLevelSet.addition.previousLevelMarker;
+    this.currentAdditionLevel = this.userLevelSet.addition.currentLevel;
   }
 
   ngOnInit() {
@@ -37,6 +49,14 @@ export class AboutPageComponent implements OnInit {
     let subjects = ['addition', 'subtraction', 'multiplication', 'division'];
     for (let i = 0; i < 15; i++) {
       this.storageService.incrementPerfectTestCount(subjects[Math.floor(Math.random() * 4)]);
+    }
+  }
+
+  public calculatePercentage(subject: string) {
+    if (subject === 'addition') {
+      this.userLevelSet;
+      let set = this.userLevelSet.addition;
+      return (set.currentScore - set.previousLevelMarker) / (set.currentNextLevel - set.previousLevelMarker) * 100;
     }
   }
 

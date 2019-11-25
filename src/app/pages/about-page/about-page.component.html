@@ -22,8 +22,9 @@
             <div class="progress-indicator-section">
                 <div class="progress-indicator-div">
                     <app-progress-indicator [progress-title]="'Addition'"
-                        [progress-indicator-value]="perfectAdditionCount"
-                        [progress-indicator-percentage]="perfectAdditionCount * 3">
+                        [progress-indicator-value]="currentAdditionCountByLevel"
+                        [progress-indicator-percentage]="additionTestIndicatorPercentage"
+                        [current-level-indicator-value]="currentAdditionLevel">
                     </app-progress-indicator>
                 </div>
                 <div class="progress-indicator-div">

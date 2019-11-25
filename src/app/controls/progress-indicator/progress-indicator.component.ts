@@ -8,12 +8,18 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ProgressIndicatorComponent implements OnInit {
 
   public progIndicValue: number;
+  public currLevelIndicValue: number;
   public progIndicPercentage: number;
   public progTitle: string;
 
   @Input('progress-indicator-value')
   set progressIndicatorValue(val) {
     this.progIndicValue = val;
+  }
+
+  @Input('current-level-indicator-value')
+  set currentLevelIndicatorValue(val) {
+    this.currLevelIndicValue = val;
   }
 
   @Input('progress-indicator-percentage')

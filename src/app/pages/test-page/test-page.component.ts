@@ -65,19 +65,9 @@ export class TestPageComponent implements OnInit {
         description: 'A test to test your multiplying skills',
         imageLink: 'https://ecdn.teacherspayteachers.com/thumbitem/Multiplication-Timed-Tests-with-Facts-1-10-3198452-1561682486/original-3198452-2.jpg',
         subject: 'multiplication',
-        questionCount: 10,
+        questionCount: 2,
         min: 1,
         max: 10
-      },
-      {
-        title: 'Multiplication Test',
-        subtitle: '10 questions on numbers 1 - 12',
-        description: 'A test to test your multiplying skills',
-        imageLink: 'https://ecdn.teacherspayteachers.com/thumbitem/Multiplication-Timed-Tests-with-Facts-1-10-3198452-1561682486/original-3198452-2.jpg',
-        subject: 'multiplication',
-        questionCount: 10,
-        min: 1,
-        max: 12
       },
       {
         title: 'Division Test',
@@ -85,7 +75,7 @@ export class TestPageComponent implements OnInit {
         description: 'A test to test your dividing skills',
         imageLink: 'https://ecdn.teacherspayteachers.com/thumbitem/Multiplication-Timed-Tests-with-Facts-1-10-3198452-1561682486/original-3198452-2.jpg',
         subject: 'division',
-        questionCount: 10,
+        questionCount: 2,
         min: 1,
         max: 9
       },
@@ -95,17 +85,7 @@ export class TestPageComponent implements OnInit {
         description: 'A test to test your adding skills',
         imageLink: 'https://ecdn.teacherspayteachers.com/thumbitem/Multiplication-Timed-Tests-with-Facts-1-10-3198452-1561682486/original-3198452-2.jpg',
         subject: 'addition',
-        questionCount: 10,
-        min: 1,
-        max: 10
-      },
-      {
-        title: 'Addition Test',
-        subtitle: '25 questions on numbers 1 - 10',
-        description: 'A test to test your adding skills',
-        imageLink: 'https://ecdn.teacherspayteachers.com/thumbitem/Multiplication-Timed-Tests-with-Facts-1-10-3198452-1561682486/original-3198452-2.jpg',
-        subject: 'addition',
-        questionCount: 25,
+        questionCount: 2,
         min: 1,
         max: 10
       },
@@ -115,7 +95,7 @@ export class TestPageComponent implements OnInit {
         description: 'A test to test your subtracting skills',
         imageLink: 'https://ecdn.teacherspayteachers.com/thumbitem/Multiplication-Timed-Tests-with-Facts-1-10-3198452-1561682486/original-3198452-2.jpg',
         subject: 'subtraction',
-        questionCount: 10,
+        questionCount: 2,
         min: 1,
         max: 10
       }

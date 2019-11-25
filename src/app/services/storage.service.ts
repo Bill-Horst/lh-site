@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Constants } from '../utils/constants';
+import { Calculations } from '../utils/calculations';
 
 @Injectable({
   providedIn: 'root'
@@ -11,12 +12,12 @@ export class StorageService {
   private perfectSubtractionTestCount: number;
   private perfectMultiplicationTestCount: number;
   private perfectDivisionTestCount: number;
-  private userTestLevels: {any};
+  private userTestLevels: any;
 
   constructor() {
     this.setUpLocalStorage();
     this.updatePerfectTestCountProperties();
-    this.updateUserTestLevels();
+    this.updateUserTestLevels();  
   }
 
   public getPerfectTestCount() {
@@ -78,6 +79,10 @@ export class StorageService {
 
   private updateUserTestLevels() {
     this.userTestLevels = JSON.parse(localStorage.getItem(Constants.USER_TEST_LEVELS));
+    this.userTestLevels.addition = Calculations.getLevelFromTestCount(this.perfectAdditionTestCount);
+    this.userTestLevels.subtraction = Calculations.getLevelFromTestCount(this.perfectSubtractionTestCount);
+    this.userTestLevels.multiplication = Calculations.getLevelFromTestCount(this.perfectMultiplicationTestCount);
+    this.userTestLevels.division = Calculations.getLevelFromTestCount(this.perfectDivisionTestCount);
   }
 
   private setUpLocalStorage() {
