@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Constants } from '../utils/constants';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,7 @@ export class StorageService {
 
   constructor() {
     this.updatePerfectTestCountProperties();
+    this.setUpLocalStorage();
   }
 
   public getPerfectTestCount() {
@@ -27,25 +29,21 @@ export class StorageService {
 
   public incrementPerfectTestCount(subject: string) {
     this.perfectTestCount++;
-    localStorage.setItem('perfectCount', this.perfectTestCount.toString());
+    localStorage.setItem(Constants.PERFECT_COUNT, this.perfectTestCount.toString());
     this.incrementPerfectSubjectTestCount(subject);
   }
 
   public clearAllTests() {
-    localStorage.removeItem('perfectCount');
-    localStorage.removeItem('perfectTestCount_addition');
-    localStorage.removeItem('perfectTestCount_subtraction');
-    localStorage.removeItem('perfectTestCount_multiplication');
-    localStorage.removeItem('perfectTestCount_division');
+    localStorage.removeItem(Constants.PERFECT_COUNT);
+    localStorage.removeItem(Constants.PERFECT_ADDITION_TEST_COUNT);
+    localStorage.removeItem(Constants.PERFECT_SUBTRACTION_TEST_COUNT);
+    localStorage.removeItem(Constants.PERFECT_MULTIPLICATION_TEST_COUNT);
+    localStorage.removeItem(Constants.PERFECT_DIVISION_TEST_COUNT);
   }
 
   private getPerfectTests(subject?: string) {
     if (!subject) {
-      if (localStorage.getItem('perfectCount')) {
-        return parseInt(localStorage.getItem('perfectCount'));
-      } else {
-        return 0;
-      }
+      return parseInt(localStorage.getItem(Constants.PERFECT_COUNT));
     }
     if (subject) {
       if (localStorage.getItem(`perfectTestCount_${subject}`)) {
@@ -69,5 +67,13 @@ export class StorageService {
     this.perfectSubtractionTestCount = this.getPerfectTests('subtraction');
     this.perfectMultiplicationTestCount = this.getPerfectTests('multiplication');
     this.perfectDivisionTestCount = this.getPerfectTests('division');
+  }
+
+  private setUpLocalStorage() {
+    if (!localStorage.getItem(Constants.PERFECT_COUNT)) { localStorage.setItem(Constants.PERFECT_COUNT, "0") };
+    if (!localStorage.getItem(Constants.PERFECT_ADDITION_TEST_COUNT)) { localStorage.setItem(Constants.PERFECT_ADDITION_TEST_COUNT, "0") };
+    if (!localStorage.getItem(Constants.PERFECT_SUBTRACTION_TEST_COUNT)) { localStorage.setItem(Constants.PERFECT_SUBTRACTION_TEST_COUNT, "0") };
+    if (!localStorage.getItem(Constants.PERFECT_MULTIPLICATION_TEST_COUNT)) { localStorage.setItem(Constants.PERFECT_MULTIPLICATION_TEST_COUNT, "0") };
+    if (!localStorage.getItem(Constants.PERFECT_DIVISION_TEST_COUNT)) { localStorage.setItem(Constants.PERFECT_DIVISION_TEST_COUNT, "0") };
   }
 }
