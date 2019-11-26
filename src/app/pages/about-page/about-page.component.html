@@ -28,19 +28,24 @@
                     </app-progress-indicator>
                 </div>
                 <div class="progress-indicator-div">
-                    <app-progress-indicator [progress-title]="'Subtraction'"
-                        [progress-indicator-value]="perfectSubtractionCount"
-                        [progress-indicator-percentage]="perfectSubtractionCount * 3"></app-progress-indicator>
+                        <app-progress-indicator [progress-title]="'Subtraction'"
+                        [progress-indicator-value]="currentSubtractionCountByLevel"
+                        [progress-indicator-percentage]="subtractionTestIndicatorPercentage"
+                        [current-level-indicator-value]="currentSubtractionLevel">
+                    </app-progress-indicator>
                 </div>
                 <div class="progress-indicator-div">
-                    <app-progress-indicator [progress-title]="'Multiplication'"
-                        [progress-indicator-value]="perfectMultiplicationCount"
-                        [progress-indicator-percentage]="perfectMultiplicationCount * 3"></app-progress-indicator>
+                        <app-progress-indicator [progress-title]="'Multiplication'"
+                        [progress-indicator-value]="currentMultiplicationCountByLevel"
+                        [progress-indicator-percentage]="multiplicationTestIndicatorPercentage"
+                        [current-level-indicator-value]="currentMultiplicationLevel">
+                    </app-progress-indicator>
                 </div>
                 <div class="progress-indicator-div">
-                    <app-progress-indicator [progress-title]="'Division'"
-                        [progress-indicator-value]="perfectDivisionCount"
-                        [progress-indicator-percentage]="perfectDivisionCount * 3">
+                        <app-progress-indicator [progress-title]="'Division'"
+                        [progress-indicator-value]="currentDivisionCountByLevel"
+                        [progress-indicator-percentage]="divisionTestIndicatorPercentage"
+                        [current-level-indicator-value]="currentDivisionLevel">
                     </app-progress-indicator>
                 </div>
             </div>
