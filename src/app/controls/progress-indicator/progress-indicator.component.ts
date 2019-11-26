@@ -14,16 +14,19 @@ export class ProgressIndicatorComponent implements OnInit {
 
   @Input('progress-indicator-value')
   set progressIndicatorValue(val) {
+    // console.log(val)
     this.progIndicValue = val;
   }
 
   @Input('current-level-indicator-value')
   set currentLevelIndicatorValue(val) {
+    // console.log(val)
     this.currLevelIndicValue = val;
   }
 
   @Input('progress-indicator-percentage')
   set progressIndicatorPercentage(val) {
+    // console.log(val)
     this.progIndicPercentage = val;
   }
 

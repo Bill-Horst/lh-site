@@ -17,7 +17,6 @@ export class StorageService {
   constructor() {
     this.setUpLocalStorage();
     this.updatePerfectTestCountProperties();
-    this.updateUserTestLevels();  
   }
 
   public getPerfectTestCount() {
@@ -75,6 +74,7 @@ export class StorageService {
     this.perfectSubtractionTestCount = this.getPerfectTests('subtraction');
     this.perfectMultiplicationTestCount = this.getPerfectTests('multiplication');
     this.perfectDivisionTestCount = this.getPerfectTests('division');
+    this.updateUserTestLevels();
   }
 
   private updateUserTestLevels() {

@@ -17,25 +17,7 @@ export class Calculations {
             }
         }
         getLevel(count);
-        // if (count < 3) {
-        //     return 1;
-        // }
-        // if (count < base + base + 1) {
-        //     return 2;
-        // }
-        // if (count < base + base + base + 1) {
-        //     return 3;
-        // }
-        // 3, 7, 12, 18, 25, 33 ... +3, +4, +5, +6, +7
-
-
-
-        // for example, pass in 2 (two tests), then...
-        // return { 
-        //     currentLevel: 1,
-        //     nextLevelMarker: 3
-        // }
-        // pass in 8 (eight tests), then...
+        
         return {
             currentScore: count,
             currentLevel,

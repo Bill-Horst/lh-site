@@ -63,7 +63,7 @@ export class AboutPageComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+
   }
 
   public clearAllTests() { // temp - to be deleted when app is live
@@ -79,22 +79,18 @@ export class AboutPageComponent implements OnInit {
 
   public calculatePercentage(subject: string) {
     if (subject === 'addition') {
-      this.userLevelSet;
       let set = this.userLevelSet.addition;
       return (set.currentScore - set.previousLevelMarker) / (set.currentNextLevel - set.previousLevelMarker) * 100;
     }
     if (subject === 'subtraction') {
-      this.userLevelSet;
       let set = this.userLevelSet.subtraction;
       return (set.currentScore - set.previousLevelMarker) / (set.currentNextLevel - set.previousLevelMarker) * 100;
     }
     if (subject === 'multiplication') {
-      this.userLevelSet;
       let set = this.userLevelSet.multiplication;
       return (set.currentScore - set.previousLevelMarker) / (set.currentNextLevel - set.previousLevelMarker) * 100;
     }
     if (subject === 'division') {
-      this.userLevelSet;
       let set = this.userLevelSet.division;
       return (set.currentScore - set.previousLevelMarker) / (set.currentNextLevel - set.previousLevelMarker) * 100;
     }
