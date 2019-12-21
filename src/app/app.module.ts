@@ -7,15 +7,16 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatMenuModule, MatToolbarModule, MatSidenavModule, MatListModule, MatButtonModule, MatIconModule, MatCardModule, MatTabsModule, MatDialogModule, MatProgressBarModule, MatRadioModule, MatProgressSpinnerModule, MatExpansionModule } from '@angular/material';
+import { MatMenuModule, MatToolbarModule, MatSidenavModule, MatListModule, MatButtonModule, MatIconModule, MatCardModule, MatTabsModule, MatDialogModule, MatProgressBarModule, MatRadioModule, MatProgressSpinnerModule, MatExpansionModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, MatTooltipModule } from '@angular/material';
 import { LinkPageComponent } from './pages/link-page/link-page.component';
 import { GamesPageComponent } from './pages/games-page/games-page.component';
 import { ProgramsPageComponent } from './pages/programs-page/programs-page.component';
 import { TestPageComponent } from './pages/test-page/test-page.component';
 import { IndividualTestComponent } from './controls/individual-test/individual-test.component';
 import { ProgressIndicatorComponent } from './controls/progress-indicator/progress-indicator.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProjectsPageComponent } from './pages/projects-page/projects-page.component';
+import { TodoPageComponent } from './pages/todo-page/todo-page.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ProjectsPageComponent } from './pages/projects-page/projects-page.compo
     TestPageComponent,
     IndividualTestComponent,
     ProgressIndicatorComponent,
-    ProjectsPageComponent
+    ProjectsPageComponent,
+    TodoPageComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,11 @@ import { ProjectsPageComponent } from './pages/projects-page/projects-page.compo
     FormsModule,
     MatRadioModule,
     MatProgressSpinnerModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatCheckboxModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent],

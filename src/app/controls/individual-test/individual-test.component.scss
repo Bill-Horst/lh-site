@@ -57,3 +57,9 @@ mat-dialog-content {
     50%  {transform: scale(2)}
     100% {transform: scale(0) rotate(360deg)}
 }
+
+.progress-indicator-div {
+    display: inline-block;
+    width: 20%;
+    margin: auto;
+}

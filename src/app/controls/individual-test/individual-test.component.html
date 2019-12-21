@@ -21,6 +21,13 @@
     </div>
 
     <div *ngIf="testState === 'finished'">
+        <!-- <div class="progress-indicator-div"> // before putting this progress indicator in the test component, keep all the user's data inside a service, outside the about page / test component
+            <app-progress-indicator [progress-title]="'Addition'"
+                [progress-indicator-value]="currentAdditionCountByLevel"
+                [progress-indicator-percentage]="additionTestIndicatorPercentage"
+                [current-level-indicator-value]="currentAdditionLevel">
+            </app-progress-indicator>
+        </div> -->
         <p>Results:</p>
         <!-- list of results here -->
         <div *ngFor="let res of testSet">
@@ -28,6 +35,7 @@
             <p [ngClass]="{'correct-answer': res.answeredCorrectly, 'wrong-answer': !res.answeredCorrectly}">You
                 answered: {{ res.chosenAnswer.answer }} </p>
         </div>
+
     </div>
 
 </mat-dialog-content>

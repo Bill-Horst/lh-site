@@ -33,11 +33,11 @@ export class TestPageComponent implements OnInit {
         linkTypes: this.mathTests
       },
 
-      {
-        title: 'Japanese',
-        matIcon: 'translate',
-        linkTypes: this.japaneseTests
-      },
+      // { // comment in to see Japanese test tab
+      //   title: 'Japanese',
+      //   matIcon: 'translate',
+      //   linkTypes: this.japaneseTests
+      // },
     ]
   }
 
@@ -65,7 +65,7 @@ export class TestPageComponent implements OnInit {
         description: 'A test to test your multiplying skills',
         imageLink: 'https://ecdn.teacherspayteachers.com/thumbitem/Multiplication-Timed-Tests-with-Facts-1-10-3198452-1561682486/original-3198452-2.jpg',
         subject: 'multiplication',
-        questionCount: 2,
+        questionCount: 10,
         min: 1,
         max: 10
       },
@@ -75,7 +75,7 @@ export class TestPageComponent implements OnInit {
         description: 'A test to test your dividing skills',
         imageLink: 'https://ecdn.teacherspayteachers.com/thumbitem/Multiplication-Timed-Tests-with-Facts-1-10-3198452-1561682486/original-3198452-2.jpg',
         subject: 'division',
-        questionCount: 2,
+        questionCount: 10,
         min: 1,
         max: 9
       },
@@ -85,7 +85,7 @@ export class TestPageComponent implements OnInit {
         description: 'A test to test your adding skills',
         imageLink: 'https://ecdn.teacherspayteachers.com/thumbitem/Multiplication-Timed-Tests-with-Facts-1-10-3198452-1561682486/original-3198452-2.jpg',
         subject: 'addition',
-        questionCount: 2,
+        questionCount: 10,
         min: 1,
         max: 10
       },
@@ -95,7 +95,7 @@ export class TestPageComponent implements OnInit {
         description: 'A test to test your subtracting skills',
         imageLink: 'https://ecdn.teacherspayteachers.com/thumbitem/Multiplication-Timed-Tests-with-Facts-1-10-3198452-1561682486/original-3198452-2.jpg',
         subject: 'subtraction',
-        questionCount: 2,
+        questionCount: 10,
         min: 1,
         max: 10
       }
