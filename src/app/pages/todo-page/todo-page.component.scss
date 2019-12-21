@@ -1,0 +1,44 @@
+.center-text {
+    text-align: center;
+}
+
+.directions-text {
+    line-height: 1px;
+}
+
+.mat-form {
+    width: 50%;
+    margin-left: 3px;
+}
+
+.mat-form-field {
+    width: 100%;
+}
+
+.todo-input-section {
+    padding: 50px;
+    background-color: greenyellow;
+    border: solid black 1px;
+    border-radius: 5px;
+    width: 50%;
+    margin: auto;
+}
+
+.todo-list {
+    list-style-type: none;
+    width: 50%;
+    margin: auto;
+}
+
+.todo-list-item {
+    margin-right: 10px;
+}
+
+.todo-list-buttons {
+    width: 50%;
+    margin: auto;
+    button {
+        display: block;
+        margin: 5px;
+    }
+}

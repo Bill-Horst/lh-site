@@ -1,0 +1,34 @@
+<div class="todo-page">
+
+    <h1 class="center-text">TODO LIST</h1>
+
+    <p class="center-text directions-text">Type something in on the line and hit enter to add something to your list!</p>
+    <p class="center-text directions-text">When you're finished with it, check the box and click 'Clear finished' to remove it from the list!</p>
+
+    <div class="todo-input-section">
+
+        <mat-list role="list" class="todo-list" matTooltip="" [matTooltipPosition]="'before'">
+
+            <mat-list-item role="listitem" *ngFor="let todo of todos, index as idx">
+                <span class="todo-list-item">{{idx + 1}}. {{ todo.label }}</span>
+                <mat-checkbox [(ngModel)]="todo.finished"></mat-checkbox>
+            </mat-list-item>
+
+            <mat-list-item>{{ todos.length + 1 }}.
+                <form class="mat-form">
+                    <mat-form-field class="mat-form-field">
+                        <input matInput [formControl]="currentTodo" (keyup.enter)="addTodo()">
+                    </mat-form-field>
+                </form>
+            </mat-list-item>
+
+        </mat-list>
+
+        <div class="todo-list-buttons">
+            <button mat-raised-button (click)="toggleAllFinished()">Toggle all</button>
+            <button mat-raised-button (click)="clearFinishedTodos()">Clear finished</button>
+        </div>
+
+    </div>
+
+</div>
